@@ -24,6 +24,7 @@ namespace Exo.WebApi.Controllers
     }
 
     // get -> /api/usuarios
+    [Authorize]
     [HttpGet]
     public IActionResult Listar()
     {
@@ -79,7 +80,6 @@ namespace Exo.WebApi.Controllers
 
 
     // get -> /api/usuarios/{id}
-    [Authorize]
     [HttpGet("{id}")] // Faz a busca pelo ID.
     public IActionResult BuscarPorId(int id)
     {
