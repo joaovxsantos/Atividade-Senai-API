@@ -20,11 +20,13 @@ namespace Exo.WebApi.Contexts
         protected override void OnConfiguring(DbContextOptionBuilder optionsBuilder)
         {
             if(!optionsBuilder.IsConfigured) {
-                optionsBuilder.UseSqlServer('Server=localhost\\SQLEXPRESS;'
+                optionsBuilder.UseSqlServer('Server=localhost\\SQLEXPRESS01;'
                                + 'Database=ExoApi;Trusted_Connection=True;') 
             }
         }
 
         public DbSet<Projeto> Projetos {get; set;}
+
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }
